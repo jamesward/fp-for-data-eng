@@ -15,13 +15,7 @@ object QuillExample extends App {
   case class Contact(id: Int, email: Option[String], personId: Int)
 
   val q = quote {
-    for {
-      person <- query[Person]
-      if person.favoriteColor == "blue"
-
-      contact <- query[Contact]
-      if contact.personId == person.id && contact.email.isDefined
-    } yield person -> contact
+    ""
   }
 
   val result = run(q)

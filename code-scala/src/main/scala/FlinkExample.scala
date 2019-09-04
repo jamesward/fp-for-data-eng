@@ -20,10 +20,7 @@ object FlinkExample extends App {
     totals ++ newTotals
   }
 
-  stream.map(Json.parse(_))
-    .keyBy(_ => "")
-    .fold(Map.empty[String, Int])(total)
-    .print()
+  stream.map(Json.toJson(_)).print()
 
   env.execute()
 
