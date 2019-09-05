@@ -20,7 +20,7 @@ object FlinkExample extends App {
     totals ++ newTotals
   }
 
-  stream.map(Json.toJson(_)).print()
+  stream.print()
 
   env.execute()
 
